@@ -7,7 +7,7 @@ export function AdminLayout(props) {
     const {children} = props;
     const auth = useAuth();
 
-    if(!auth) return <LoginAdmin/>
+    if(auth) return <LoginAdmin/>
     
     return (
         <div>
