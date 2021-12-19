@@ -8,7 +8,6 @@ import { useAuth } from '../../../hooks';
 import "./LoginForm.scss";
 
 export function LoginForm() {
-    
     const {login} = useAuth();
     const formik = useFormik({
         initialValues:initialValues(),
@@ -17,7 +16,6 @@ export function LoginForm() {
             try {
                 const response = await loginApi(formValue);
                 const {access} = response;
-                
                 login(access);
             } catch (error) {
                 toast.error(error.message);
